@@ -1,0 +1,11 @@
+services:
+  website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    deploy:
+      update_config:
+        order: start-first
+      replicas: 1
+    ports:
+      - "5757:3000"
