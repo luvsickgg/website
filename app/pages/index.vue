@@ -11,19 +11,9 @@ const socials: { platform: string; url: string; username: string }[] = [
         username: "@luvsick.gg",
     },
     {
-        platform: "discord",
-        url: "https://discord.com/users/293020630608248832",
-        username: "@luvsick.gg",
-    },
-    {
-        platform: "signal",
-        url: "https://signal.me/#eu/s5AaMe2FPqNiKcbrP71wH7S9aUddKAYmckvX7cMfEe53oCbBj2hHSo5ELtuFV8dG",
-        username: "@luvsick.01",
-    },
-    {
-        platform: "email",
-        url: "mailto:hi@luvsick.gg",
-        username: "hi@luvsick.gg",
+        platform: "codeberg",
+        url: "https://codeberg.org/luvsick",
+        username: "@luvsick",
     },
     {
         platform: "steam",
@@ -31,18 +21,30 @@ const socials: { platform: string; url: string; username: string }[] = [
         username: "id/luvsickgg",
     },
     {
-        platform: "codeberg",
-        url: "https://codeberg.org/luvsick",
-        username: "@luvsick",
+        platform: "signal",
+        url: "https://signal.me/#eu/s5AaMe2FPqNiKcbrP71wH7S9aUddKAYmckvX7cMfEe53oCbBj2hHSo5ELtuFV8dG",
+        username: "@luvsick.01",
+    },
+    {
+        platform: "discord",
+        url: "https://discord.com/users/293020630608248832",
+        username: "@luvsick.gg",
+    },
+    {
+        platform: "email",
+        url: "mailto:hi@luvsick.gg",
+        username: "hi@luvsick.gg",
     },
 ];
 
 const servers: { name: string; specs: string }[] = [
     {
         name: "lumi",
-        specs: "France, 4 Cores, 8GB RAM, 400Mbps",
+        specs: "France, NixOS 25.05 (Unstable), 4 Cores, 8GB RAM, 400Mbps",
     },
 ];
+
+const domains: string[] = ["luvsick.gg"];
 
 const orgs: string[] = [];
 </script>
@@ -167,6 +169,33 @@ const orgs: string[] = [];
                         </li>
                     </ul>
                 </div>
+
+                <div class="mt-4" v-if="domains.length">
+                    <div
+                        class="text-white/60 flex gap-2 items-center mb-3 text-[13px]"
+                    >
+                        <span>additionally, i control</span>
+                        <strong class="text-white">{{ domains.length }}</strong>
+                        <span
+                            >{{
+                                domains.length === 1
+                                    ? "root domain"
+                                    : "root domains"
+                            }}
+                            at the registry level.</span
+                        >
+                    </div>
+
+                    <ul class="list-none p-0 m-0 flex gap-2 flex-wrap">
+                        <li
+                            v-for="domain in domains"
+                            :key="domain"
+                            class="text-[13px] font-bold bg-white/[0.01] py-[6px] px-2 rounded-lg border border-white/[0.01]"
+                        >
+                            {{ domain }}
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <section
@@ -175,7 +204,7 @@ const orgs: string[] = [];
             >
                 <h3 class="m-0 mb-2">organisations i support</h3>
                 <p class="m-0 mb-[14px] text-white/60 text-[13px]">
-                    i'm proud to be a member of and support the following
+                    i'm proud to be part of and support the following
                     organisations:
                 </p>
                 <ul class="list-none p-0 mt-2 mb-0 flex flex-col gap-2">
