@@ -123,8 +123,8 @@ const orgs: string[] = [];
       >
         <h2 class="m-0 mb-2 text-base">luvsicknet</h2>
         <p class="m-0 mb-[14px] text-white/60 text-[13px]">
-          my digital playground, where i self-host random experiments and mess
-          around with infrastructure.
+          my infrastructure playground where i experiment with self-hosting, and
+          networking.
         </p>
 
         <div class="mt-2">
